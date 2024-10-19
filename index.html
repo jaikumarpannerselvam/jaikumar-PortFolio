@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaikumar P - Portfolio</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background-image.jpg'); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+            color: #120909;
+            position: relative;
+            transition: background-color 0.5s, color 0.5s;
+            background-color:black;
+        }
+
+        /* Background overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Navigation Menu */
+        .navigation-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navigation-section nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .navigation-section nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 1rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation-section nav a img {
+            margin-right: 0.5rem;
+            height: 20px;
+            width: 20px;
+        }
+
+        .navigation-section nav a:hover {
+            color: black;
+        }
+
+        /* Light Mode and Dark Mode */
+                /* Dark Mode styles */
+                .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Toggle Button */
+        .mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+
+        /* Sections */
+        .content-section {
+            margin-top: 70px;
+            padding: 2rem;
+            
+            
+        }
+
+        /* Sections */
+section {
+    padding: 2.5rem;
+    background-color: black; /* Changed from rgba(255, 255, 255, 0.9) to black */
+    color: #fff; /* Changed the text color to white for better contrast */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Optional: If you want alternating colors for even sections */
+section:nth-child(even) {
+    background-color: #111; /* Slightly lighter black for alternating sections */
+}
+
+
+        /* Home Section */
+        #home {
+            text-align: left;
+        }
+
+        /* Project Cards */
+ /* Projects Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Ensure two projects per row and alignment */
+.projects-column {
+    flex: 1 1 calc(50% - 2rem); /* Adjust to ensure two columns with space in between */
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.project {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%; /* Set to 100% of its column */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+        /* Footer */
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: black;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: black;
+        }
+
+        /* Skills Section */
+        /* Skills Section Styling */
+.skills-container {
+    display: flex;
+    justify-content: space-between; /* Space between the two columns */
+    flex-wrap: wrap;               /* Allows wrapping if needed */
+}
+
+.skills-column {
+    flex: 1;                       /* Each column takes up equal space */
+    min-width: 45%;                /* Minimum width for responsiveness */
+    margin: 10px;                  /* Optional: Adds spacing around columns */
+}
+
+/* Optional styling to align heading in the center */
+.section-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Skill bar styling */
+.skill {
+    margin-bottom: 15px;           /* Space between skills */
+}
+
+.progress-bar {
+    background-color: #e0e0e0;     /* Background color for progress bar */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress {
+    background-color: #76c7c0;     /* Color of the progress */
+    height: 100%;
+}
+
+
+            /* About Section Styles */
+            .about-section {
+            background-color:black;
+            color:white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: yellow;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.1rem;
+            
+        }
+
+        .info-container .info-item {
+            width: 100%;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            
+        }
+
+        .info-container .info-item span {
+            font-weight: bold;
+            color: yellow;
+            
+        }
+
+        .projects-completed {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: #ffd700;
+        }
+
+        .download-resume {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .download-resume:hover {
+            background-color: #ffd700;
+            color: #111;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navigation-section nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navigation-section nav a {
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Dark Mode Button */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .mode-toggle:hover {
+            background-color: #ccc;
+        }
+            /* Contact Section Styles */
+            .contact-section {
+            background-color: #111;
+            color: #fff;
+            padding: 3rem;
+            text-align: center;
+            
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem; 
+            
+        }
+
+        .contact-card {
+            background-color: #222;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            
+        }
+
+        .contact-card img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+            /* Resume Section Styling */
+            .resume-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .resume-section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .resume-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        /* View Resume Button Styling */
+        .btn-view-resume {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #00c9ff, #92fe9d);
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-view-resume:hover {
+            background: linear-gradient(45deg, #92fe9d, #00c9ff);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Ripple Effect */
+        .btn-view-resume::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.6s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .btn-view-resume:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        /* Center align for section headings with a specific class */
+.section-heading {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: yellow;
+}
+/* Full section with background image */
+.home {
+    position: relative;        /* Allows absolute positioning for the text */
+    width: 90vw;              /* Full width of the viewport */
+    height: 100vh;             /* Full height of the viewport */
+    background-image: url("./assets/logo1.jpg"); /* Replace with your image path */
+    background-size: cover;    /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+
+/* Center the text on the image */
+.home p {
+    position: absolute;
+    top: 50%;                  /* Move the text to the middle */
+    left: 50%;                 /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect center alignment */
+    color: yellow;              /* Text color for visibility */
+    font-size: 2rem;           /* Adjust font size as needed */
+    text-align: left;        /* Center-align the text */
+    font-weight: bold;         /* Optional: Make the text bold */
+}
+/* Projects Section Styling */
+#projects {
+    padding: 20px;
+    background-color: #120909;
+    text-align: center; 
+    
+}
+
+.section-heading {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+    
+}
+
+.projects-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    max-width: 5%;
+    max-height: 40%; 
+}
+
+.project {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 400%;
+    max-height: 400%;
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.project h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.project p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+}
+
+.run-btn {
+    background-color: #2ecc71;
+}
+
+/* Image Quality Settings */
+img {
+    image-rendering: auto;
+    -webkit-filter: brightness(1.05);
+    filter: brightness(1.05);
+}
+
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div class="navigation-section">
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#about">👤 About</a>
+            <a href="#skills">💻 Skills</a>
+            <a href="#resume">📄 Resume</a>
+            <a href="#projects">📁 Projects</a>
+            <a href="#contact">✉️ Contact</a>
+        </nav>
+    </div>
+    
+
+    <!-- Light/Dark Mode Toggle Button -->
+    <!-- <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+ -->
+    <!-- Content Section -->
+    <div class="content-section">
+        <!-- Home Section -->
+        <section  class ="home" id="home">
+            <p>Hello !<br>This is Jaikumar P<br>I am a Fullstack Developer!</p>
+        </section>
+
+        
+    <!-- About Me Section -->
+    <section class="about-section" id="about">
+        <h2>About Me</h2>
+        <p>To improve my skills and knowledge in technology and shape my professional career along with the organizational growth.</p>
+        <div class="info-container">
+            <div class="info-item">
+                <span>Name: </span> Jaikumar p
+            </div>
+            <div class="info-item">
+                <span>Date of Birth: </span> Apiral 04, 2003
+            </div>
+            <div class="info-item">
+                <span>Address: </span> Erode, Tamilnadu, India
+            </div>
+            <div class="info-item">
+                <span>Zip Code: </span> 638112
+            </div>
+            <div class="info-item">
+                <span>Email: </span> jaikumarkumar6666@gmail.com
+            </div>
+            <div class="info-item">
+                <span>Phone: </span> 9790436058
+            </div>
+        </div>
+        
+    </section>
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="resume-content">
+            <h2>Resume</h2>
+            <p>Click the button below to view or download my resume.</p>
+            <a href="./assets/jaikumar-Port-Resume.pdf" class="btn-view-resume" target="_blank">View Resume</a>
+        </div>
+    </section>
+
+    
+        <!-- Skills Section -->
+<!--         
+        <div class="content-section">
+            Skills Section -->
+<!-- Skills Section -->
+<section id="skills">
+    <h2 class="section-heading">Skills</h2>
+    <div class="skills-container">
+        <div class="skills-column">
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#x2615;</i> <!-- Coffee cup symbol representing Java -->
+                    Core Java
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#9881;</i> <!-- Gear symbol representing Java 8 features -->
+                    Java 8
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#128451;</i> <!-- Database symbol representing MySQL -->
+                    MySQL
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#128196;</i> <!-- Code file symbol representing HTML -->
+                    HTML
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#x1F58C;</i> <!-- Paintbrush symbol representing CSS -->
+                    CSS
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skills-column">
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#9889;</i> <!-- Lightning bolt symbol representing JavaScript -->
+                    JavaScript
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#x1F5A5;</i> <!-- Server symbol representing Servlet -->
+                    Servlet
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#x1F33F;</i> <!-- Leaf symbol representing Spring Boot -->
+                    JSP
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 79%;"></div>
+                </div><br>
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#128267;</i> <!-- Connector plug symbol representing JDBC -->
+                    JDBC
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <i>&#x1F33F;</i> <!-- Leaf symbol representing Spring Boot -->
+                    Spring Boot
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2 class="section-heading">Projects</h2><br>
+    
+    <div class="projects-container">
+        <!-- Left Column -->
+        <div class="projects-column">
+            <h2>Front Project</h2>
+            <!-- First five projects -->
+            <div class="project">
+                <img src="./assets/robot.png" alt="Project 1 Thumbnail">
+                <h3>Project 1</h3>
+                <p>Dancing Roboat</p>
+                <a href="https://github.com/jaikumarpannerselvam/taskthree" class="btn">View Project</a>
+                <a href="https://jaikumarpannerselvam.github.io/taskthree/" class="btn run-btn">Run</a>
+            </div>
+            <div class="project">
+                <img src="./assets/clock.png" alt="Project 2 Thumbnail">
+                <h3>Project 2</h3>
+                <p>Timer Count</p>
+                <a href="https://github.com/jaikumarpannerselvam/tasktwo" class="btn">View Project</a>
+                <a href=" https://jaikumarpannerselvam.github.io/tasktwo/" class="btn run-btn">Run</a>
+            </div>
+            <div class="project">
+                <img src="./assets/claculator.png" alt="Project 3 Thumbnail">
+                <h3>Project 3</h3>
+                <p>Calculator</p>
+                <a href="https://github.com/jaikumarpannerselvam/taskone" class="btn">View Project</a>
+                <a href="https://jaikumarpannerselvam.github.io/taskone/" class="btn run-btn">Run</a>
+            </div>
+            <div class="project">
+                <img src="./assets/Screenshot (27).png" alt="Project 4 Thumbnail">
+                <h3>Project 4</h3>
+                <p>Money Spilter</p>
+                <a href="https://github.com/jaikumarpannerselvam/taskfour" class="btn">View Project</a>
+                <a href="https://jaikumarpannerselvam.github.io/taskfour/" class="btn run-btn">Run</a>
+            </div>
+            <div class="project">
+                <img src="./assets/Screenshot (26).png" alt="Project 5 Thumbnail">
+                <h3>Project 5</h3>
+                <p>Ticket Booking Service</p>
+                <a href="https://github.com/jaikumarpannerselvam/taskfive" class="btn">View Project</a>
+                <a href="https://jaikumarpannerselvam.github.io/taskfive/" class="btn run-btn">Run</a>
+            </div>
+        </div>
+        <!-- Right Column -->
+        <div class="projects-column">
+            <h2>Backend Java Project</h2>
+            <!-- Next five projects -->
+            <div class="project">
+                <img src="./assets/Screenshot (25).png" alt="Project 7 Thumbnail">
+                <h3>project 6</h3>
+                <p>E-Commerce.JavaCode</p>
+                <a href="https://github.com/jaikumarpannerselvam/E-commerce" class="btn">View Project</a>
+                
+            </div>
+            <div class="project">
+                <img src="./assets/Screenshot (25).png" alt="Project 8 Thumbnail">
+                <h3>project 7</h3>
+                <p>MoneySpliter.JavaCode</p>
+                <a href="https://github.com/jaikumarpannerselvam/javaMoneySpilter" class="btn">View Project</a>
+                
+            </div>
+            <div class="project">
+                <img src="./assets/Screenshot (25).png" alt="Project 9 Thumbnail">
+                <h3>project 8</h3>
+                <p>password_encryption.JavaCode.</p>
+                <a href="https://github.com/jaikumarpannerselvam/password_encryption" class="btn">View Project</a>
+                
+            </div>
+            <div class="project">
+                <img src="./assets/Screenshot (25).png" alt="Project 10 Thumbnail">
+                <h3>Project 10</h3>
+                <p>RiddleGame.JavaCode</p>
+                <a href="https://github.com/jaikumarpannerselvam/RiddleGame" class="btn">View Project</a>
+                
+            </div>
+            <div class="project">
+                <img src="./assets/Screenshot (25).png" alt="Project 11 Thumbnail">
+                <h3>Project 11</h3>
+                <p>clock.JavaCode</p>
+                <a href="https://github.com/jaikumarpannerselvam/Clock" class="btn">View Project</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <img src="./assets/logo2.jpg" alt="Address">
+                    <p>Address</p>
+                    <p><a>Erode, Tamil Nadu, India</a></p>
+                </div>
+                <div class="contact-card">
+                    <img src="./assets/logo5.jpg" alt="Phone">
+                    <p>Phone</p>
+                    <p><a href="tel:+919790436058">+91 9790436058</a></p>
+                </div>
+                <div class="contact-card">
+                    <img src="./assets/logo3.jpg" alt="Email">
+                    <p>Email</p>
+                    <p><a href="mailto:mathiyarasu.mo0607@gmail.com">jaikumarkumar6666</br>@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <img src="./assets/logo7.png" alt="LinkedIn">
+                    <p>LinkedIn</p>
+                    <p><a href="https://www.linkedin.com/in/jai-kumar-3b51a2253/" target="_blank">jai-kumar-3b51a2253</a></p>
+                </div>
+                <div class="contact-card">
+                    <img src="./assets/logo4.jpg" alt="GitHub">
+                    <p>GitHub</p>
+                    <p><a href="https://github.com/jaikumarpannerselvam" target="_blank">jaikumarpannerselvam</a></p>
+                </div>
+                <!-- <div class="contact-card">
+                    <img src="instagram-icon.png" alt="Instagram">
+                    <p>Instagram</p>
+                    <p><a href="https://instagram.com/0607mathi" target="_blank"></a></p>
+                </div> -->
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jaikumar P. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Light/Dark Mode -->
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+            // Optionally, you can save the user's preference in localStorage
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // Apply the user's preference on page load
+        window.onload = function() {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
